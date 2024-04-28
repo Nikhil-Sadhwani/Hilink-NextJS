@@ -6,12 +6,15 @@ type Props = {
   title: string;
   icon?: string;
   variant: string;
+  full?: boolean;
 };
 
 export default function Button(props: Props) {
   return (
     <button
-      className={`flexCenter gap-3 rounded-full border ${props.variant}`}
+      className={`flexCenter gap-3 rounded-full border ${props.variant} ${
+        props.full && "w-full"
+      }`}
       type={props.type}
     >
       {props.icon && (
